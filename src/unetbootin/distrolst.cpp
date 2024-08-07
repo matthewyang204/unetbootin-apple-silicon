@@ -11,18 +11,13 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 #define debianrelnamereplace \
 	relname \
 	.replace("unstable", "sid") \
-    .replace("testing", "bookworm") \
-    .replace("stable", "bullseye");
+    .replace("testing", "bullseye") \
+    .replace("stable", "buster");
 #endif
 
 #ifndef ubunturelnamereplace
 #define ubunturelnamereplace \
 	relname \
-    .replace("23.04", "lunar") \
-    .replace("22.10", "kinetic") \
-    .replace("22.04", "jammy") \
-    .replace("21.10", "impish") \
-    .replace("21.04", "hirsute") \
     .replace("20.10", "groovy") \
     .replace("20.04", "focal") \
     .replace("19.10", "eoan") \
@@ -612,24 +607,31 @@ if (nameDistro == "Linux Mint")
         QRegExp("^((?!nocodecs).)*$", Qt::CaseInsensitive) <<
         QRegExp("cinnamon", Qt::CaseInsensitive);
 	downloadfile(fileFilterNetDir(QStringList() <<
-	QString("http://ftp.jaist.ac.jp/pub/Linux/linuxmint/isos/stable/%1/").arg(relname) <<
-	QString("http://ftp.riken.jp/pub/Linux/linuxmint/isos/stable/%1/").arg(relname) <<
+	QString("http://ftp.heanet.ie/pub/linuxmint.com/stable/%1/").arg(relname) <<
+	QString("http://mira.sunsite.utk.edu/linuxmint/stable/%1/").arg(relname) <<
+	QString("http://mirror.yellowfiber.net/linuxmint/stable/%1/").arg(relname) <<
+	QString("http://mirror.optus.net/linuxmint/isos/stable/%1/").arg(relname) <<
+	QString("http://mint.ez.by/linuxmint.com/stable/%1/").arg(relname) <<
+	QString("http://linuxmint.secsup.org/stable/%1/").arg(relname) <<
+	QString("http://ftp.jaist.ac.jp/pub/Linux/LinuxMint-ISO/stable/%1/").arg(relname) <<
+	QString("http://ftp.riken.jp/pub/Linux/linuxmint/stable/%1/").arg(relname) <<
+	QString("http://ftp.oss.tw/pub/Mint/LinuxMint-ISO/stable/%1/").arg(relname) <<
+	QString("http://gd.tuwien.ac.at/linux/mint/isos/stable/%1/").arg(relname) <<
 	QString("http://ftp.mgts.by/pub/linuxmint/isos/stable/%1/").arg(relname) <<
+	QString("http://mirrors.cytanet.com.cy/linux/mint/stable/%1/").arg(relname) <<
 	QString("http://ftp.klid.dk/ftp/linuxmint/stable/%1/").arg(relname) <<
 	QString("http://ftp5.gwdg.de/pub/linux/debian/mint/stable/%1/").arg(relname) <<
-	QString("http://mirror.netcologne.de/linuxmint/iso/stable/%1/").arg(relname) <<
+	QString("http://mirror.netcologne.de/mint/stable/%1/").arg(relname) <<
 	QString("http://ftp.cc.uoc.gr/mirrors/linux/linuxmint/stable/%1/").arg(relname) <<
 	QString("http://ftp.heanet.ie/pub/linuxmint.com/stable/%1/").arg(relname) <<
+	QString("http://ftp.akl.lt/Linux/Mint/stable/%1/").arg(relname) <<
+	QString("http://cesium.di.uminho.pt/pub/linuxmint/stable/%1/").arg(relname) <<
+	QString("http://ftp.df.lth.se/pub/linuxmint/stable/%1/").arg(relname) <<
+	QString("http://mirror.switch.ch/ftp/mirror/linuxmint/stable/%1/").arg(relname) <<
+	QString("http://mirror.sov.uk.goscomb.net/linuxmint.com/stable/%1/").arg(relname) <<
 	QString("http://mirror.csclub.uwaterloo.ca/linuxmint/stable/%1/").arg(relname) <<
 	QString("http://mirror.aarnet.edu.au/pub/linuxmint/stable/%1/").arg(relname) <<
-	QString("http://free.nchc.org.tw/linuxmint/isos/stable/%1/").arg(relname) <<
-	QString("http://ftp.kaist.ac.kr/linuxmint-iso/stable/%1/").arg(relname) <<
-	QString("http://ftp.acc.umu.se/mirror/linuxmint.com/iso/stable/%1/").arg(relname) <<
-	QString("http://mirror.yandex.ru/linuxmint/stable/%1/").arg(relname) <<
-	QString("http://www.mirrorservice.org/sites/www.linuxmint.com/pub/linuxmint.com/stable/%1/").arg(relname) <<
-	QString("http://ftp.icm.edu.pl/pub/Linux/dist/linuxmint/isos/stable/%1/").arg(relname) <<
-	QString("http://ftp.fau.de/mint/iso/stable/%1/").arg(relname) <<
-	QString("http://mirrors.ocf.berkeley.edu/linux-mint/stable/%1/").arg(relname) //<<
+	QString("http://mirror.waia.asn.au/pub/linux/linuxmint/linuxmint-isos/linuxmint.com/stable/%1/").arg(relname) //<<
 //	QString("ftp://mirrors.secution.com/linuxmint.com/stable/%1/").arg(relname) <<
 //	QString("ftp://ftp.is.co.za/mirror/linuxmint.com/stable/%1/").arg(relname) <<
 //	QString("ftp://ftp.tpnet.pl/pub/linux/linuxmint/isos/stable/%1/").arg(relname) <<
@@ -1025,19 +1027,9 @@ if (nameDistro == "Ubuntu")
 			"http://releases.ubuntu.com/releases/"+relname <<
 //			"ftp://releases.ubuntu.com/releases/.pool/" <<
 			"http://mirrors.gigenet.com/ubuntu/"+relname <<
+			"http://mirrors.easynews.com/linux/ubuntu-releases/"+relname <<
 			"http://www.gtlib.gatech.edu/pub/ubuntu-releases/"+relname <<
-			"http://ftp.wayne.edu/ubuntu/releases/"+relname <<
-			"http://ftp.kaist.ac.kr/ubuntu-cd/"+relname <<
-			"http://free.nchc.org.tw/ubuntu-cd/"+relname <<
-			"http://ftp.ubuntu-tw.org/ubuntu-releases/"+relname <<
-			"http://mirrors.kernel.org/ubuntu-releases/"+relname <<
-			"http://mirrors.mit.edu/ubuntu-releases/"+relname <<
-			"http://mirror.umd.edu/ubuntu-iso/"+relname <<
-			"http://mirror.uoregon.edu/ubuntu-releases/"+relname <<
-			"http://ftp.jaist.ac.jp/pub/Linux/ubuntu-releases/"+relname <<
-			"http://mirror.csclub.uwaterloo.ca/ubuntu-releases/"+relname <<
-			"http://ubuntu.mirrors.ovh.net/ubuntu-releases/"+relname <<
-			"http://mirror.ox.ac.uk/sites/releases.ubuntu.com/releases/"+relname <<
+			"http://ftp.wayne.edu/linux_distributions/ubuntu/"+relname <<
 			"http://ubuntu.mirrors.proxad.net/"+relname
 			, 524288000, 1048576000, QList<QRegExp>() << 
 			QRegExp(".iso$", Qt::CaseInsensitive) << 
